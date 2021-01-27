@@ -11,6 +11,7 @@ const App = () => {
     event.preventDefault();
     const flatId = event.target.innerHTML - 1;
     setSelectedFlat(flats[flatId]);
+
   };
 
   return (
