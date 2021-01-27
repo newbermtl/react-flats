@@ -1,8 +1,13 @@
 import React from 'react';
 
-const Marker = () => {
+const Marker = (props) => {
+  const flat = props.flat;
   return (
-    <div className="marker" />
+    <div className="marker">
+      <p>
+        {`${flat.price} ${flat.priceCurrency}`}
+      </p>
+    </div>
   );
 };
 

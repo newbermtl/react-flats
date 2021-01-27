@@ -12,18 +12,18 @@ const GoogleMap = (props) => {
       lat: 48.864716,
       lng: 2.349014
     },
-    zoom: 11
+    zoom: 12
   };
 
   return (
     // Important! Always set the container height explicitly
-    <div style={{ height: '100vh', width: '100%' }}>
+    <div className="map-container" style={{ height: '100vh' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: GOOGLE_API_KEY }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
-        <Marker lat={flat.lat} lng={flat.lng} />
+        <Marker lat={flat.lat} lng={flat.lng} flat={flat} />
       </GoogleMapReact>
     </div>
   );

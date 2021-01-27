@@ -5,7 +5,13 @@ import flats from '../data/flats';
 
 const FlatList = (props) => {
   const renderedFlats = flats.map((flat) => {
-    return <Flat flat={flat} key={flat.id} handleClick={props.handleClick} />;
+    return (<Flat
+      flat={flat}
+      key={flat.id}
+      handleClick={props.handleClick}
+      selectedFlatId={props.selectedFlatId}
+    />
+    );
   });
   return (
     <div className="flat-list">
