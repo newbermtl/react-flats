@@ -7,12 +7,19 @@ import GOOGLE_API_KEY from '../data/GApi';
 const GoogleMap = (props) => {
   const flat = props.flat;
 
-  const defaultProps = {
+  const defaultMapInfo = {
     center: {
-      lat: 48.864716,
-      lng: 2.349014
+      lat: 48.884211,
+      lng: 2.34689
     },
     zoom: 12
+  };
+
+  const mapInfo = {
+    center: {
+      lat: flat.lat,
+      lng: flat.lng
+    }
   };
 
   return (
@@ -20,8 +27,8 @@ const GoogleMap = (props) => {
     <div className="map-container" style={{ height: '100vh' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: GOOGLE_API_KEY }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
+        defaultZoom={defaultMapInfo.zoom}
+        center={mapInfo.center.lat ? mapInfo.center : defaultMapInfo.center}
       >
         <Marker lat={flat.lat} lng={flat.lng} flat={flat} />
       </GoogleMapReact>
